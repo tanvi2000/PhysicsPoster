@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[paperwidth=10in, paperheight=7.5in]{geometry}
+\usepackage[landscape, letter, center, cam, pdflatex]{crop}
+\usepackage[]{pdfpages}
+
+\author{Tanvi Jakkampudi}
+\date{June 20, 2019}
+
+
+
+\begin{document}
+
+\includepdf[clip,trim={0in 22.5in 30in 0in}]{main.pdf}
+
+\includepdf[clip,trim={10in 22.5in 20in 0in}]{main.pdf}
+
+\includepdf[clip,trim={20in 22.5in 10in 0in}]{main.pdf}
+
+\includepdf[clip,trim={30in 22.5in 0in 0in}]{main.pdf}
+
+
+
+\includepdf[clip,trim={0in 15in 30in 7.5in}]{main.pdf}
+
+\includepdf[clip,trim={10in 15in 20in 7.5in}]{main.pdf}
+
+\includepdf[clip,trim={20in 15in 10in 7.5in}]{main.pdf}
+
+\includepdf[clip,trim={30in 15in 0in 7.5in}]{main.pdf}
+
+
+
+\includepdf[clip,trim={0in 7.5in 30in 15in}]{main.pdf}
+
+\includepdf[clip,trim={10in 7.5in 20in 15in}]{main.pdf}
+
+\includepdf[clip,trim={20in 7.5in 10in 15in}]{main.pdf}
+
+\includepdf[clip,trim={30in 7.5in 0in 15in}]{main.pdf}
+
+
+
+\includepdf[clip,trim={0in 0in 30in 22.5in}]{main.pdf}
+
+\includepdf[clip,trim={10in 0in 20in 22.5in}]{main.pdf}
+
+\includepdf[clip,trim={20in 0in 10in 22.5in}]{main.pdf}
+
+\includepdf[clip,trim={30in 0in 0in 22.5in}]{main.pdf}
+
+
+\end{document}

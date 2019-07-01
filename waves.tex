@@ -1,0 +1,62 @@
+\newcommand\wave{%
+  \centering
+	\begin{tikzpicture}[]
+	      \begin{scope}
+        \begin{axis}[width=31.5in,height=13cm,
+            hide axis]
+          \addplot [color=coolblack,only marks, domain=0.5:11*pi-2, samples=2400, mark size=2,mark=*]
+                      ({sin(deg(x+0.3*rand)) + x+0.3*rand}, {rand});
+          \addplot [mark=none, color=red, line width=1.5mm, domain=1:11*pi-1, smooth, samples=1000] {cos(deg(\x))*-1};
+          \draw[line width=3mm,rounded corners=2cm, shading=axis, left color=rose!70, right color=Bittersweet!50, middle color=lemon!50, shading angle=40, draw=rose!50, opacity=0.35] (-1,-1) rectangle (11*pi+1,1);
+          \draw[fill=cyan,very thick, draw=cyan] (0,-1) rectangle (1,1);
+          \draw[rounded corners=2cm,fill=cyan,very thick, draw=cyan] (-1,-1) rectangle node[xshift=0.5cm,above,font=\large,rotate=90, text=white]{Speaker} (1,1);
+          \coordinate (box1) at (-1,0);
+          \draw[fill=cyan,very thick, draw=cyan] (11*pi-1,-1) rectangle (11*pi,1);
+          \draw[rounded corners=2cm,fill=cyan,ultra thick, draw=cyan] (11*pi-1,-1) rectangle node[xshift=-0.5cm,above,font=\large,rotate=-90, text=white]{Microphone} (11*pi+1,1);
+          \coordinate (box2) at (11*pi+1,0);
+          \coordinate (max1) at ({pi},-1.1);
+          \coordinate (wl1) at ({pi},1.1);
+          \coordinate (max2) at ({3*pi},-1.1);
+          \coordinate (wl2) at ({3*pi},1.1);
+          \coordinate (max3) at ({5*pi},-1.1);
+          \coordinate (min1) at ({6*pi},-1.1);
+          \coordinate (min2) at ({8*pi},-1.1);
+          \coordinate (min3) at ({10*pi},-1.1);
+        \end{axis}
+        \tikzset{myptr/.style={decoration={markings,mark=at position 1 with %
+    {\arrow[arrowhead=1cm,>=tonew]{>}}},postaction={decorate}}};
+        \node[text=coolblack, below] at (max1) {\normalsize\bf Compression};
+        \node[text=coolblack, below] at (max2) {\normalsize\bf High~pressure};
+        \node[text=coolblack, below] at (min2) {\normalsize\bf Rarefaction};
+        \node[text=coolblack, below] at (min3) {\normalsize\bf Low~pressure};
+        \draw[draw=coolblack, {Straight Barb[line width=1mm,scale=2,length=0pt,width=8mm]<}-{> Straight Barb[line width=1mm,scale=2,length=0pt,width=8mm]}, line width=1mm]
+              ([yshift=0cm]wl1 |- current axis.north)
+              -- node[above, text=coolblack, yshift=0.4cm]{\normalsize\bf Wave length $\bm \lambda$} ([yshift=0cm]wl2 |- current axis.north);
+        \node(bin1)[yshift=2.25cm,xshift=-8cm,circle,minimum size=5cm,inner sep=10pt, text width=4.5cm, fill=rose, text=white, align=center] at (box1 |- current axis.west) {Connected to function generator};
+        \draw[myptr, red, line width=2mm] (box1.center) -- (bin1.east);
+        \node(bin2)[xshift=3.5cm,yshift=2.25cm,circle,minimum size=5cm,inner sep=10pt, text width=4.5cm, fill=Bittersweet, text=white, align=center] at (box2 |- current axis.east) {Connected to Oscilloscope};
+        \draw[myptr, red, line width=2mm] (box2.center) -- (bin2.west);
+        \end{scope}
+        \begin{scope}
+    
+        \end{scope}
+          
+          % \coordinate (max3) at ({5*pi},0);
+          % \coordinate (min2) at ({2*pi},0); 
+          % \coordinate (min3) at ({4*pi},0); 
+        % \end{axis}
+        % \node (comp) at ([yshift=-1cm]min2 |- current axis.south) {compressions};
+        % \draw[-latex] (comp) -- (max1 |- current axis.south);
+        % \draw[-latex] (comp) -- (max2 |- current axis.south);
+        % \node (rare) at ([yshift=1cm]max2 |- current axis.north) {rarefactions};
+        % \draw[-latex] (rare) -- (min2 |- current axis.north);
+        % \draw[-latex] (rare) -- (min3 |- current axis.north);
+        % \draw[{Straight Barb[length=0pt,width=4mm] Latex[]}-{Latex[] Straight Barb[length=0pt,width=4mm]}]
+        % ([yshift=-0.3cm]max2 |- current axis.south)
+        % --([yshift=-0.3cm]max3 |- current axis.south) node[midway,fill=white]{$\lambda$};
+        % \draw[-latex] ([yshift=0.3cm]max3 |- current axis.north)
+        % -- ([yshift=0.3cm]current axis.north east) node[midway,above,align=center]{direction of\\ wave motion};
+        % \draw[latex-latex] ([xshift=0.2cm,yshift=-0.3cm]max3 |- current axis.south)
+        % -- ([yshift=-0.3cm]current axis.south east) node[midway,below,align=center]{direction of\\ particle motion};
+    \end{tikzpicture}
+  }

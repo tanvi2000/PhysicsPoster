@@ -1,0 +1,232 @@
+\documentclass{article}
+
+\author{Tanvi Jakkampudi}
+\title{Speed of sound}
+
+\input{preamble.tex}
+%=====================================  content  ===================================================
+\begin{document}
+	
+	\poster{
+		%=======  heading  =====================
+		\ptitle
+		[Physics_logo2.png]
+		{Speed of Sound in Gases at Room Temperature}
+		{Tanvi Jakkampudi}
+		{Department {of} Physics, Carnegie Mellon University}
+		
+		
+		%=======  topleft  =====================
+	\psection{topleft}{Abstract}{
+We review the results of our experiment to find out how the speed of sound differs in various gases and how mass and the structure of the gas molecules plays a role in the phenomenon. It is predicted that both the molar mass and molecules' degrees of freedom in motion affect the speed at which sound propagates. First, we used a function generator and an oscilloscope to experimentally measure the speed of sound in a tube filled with gas and fitted with speaker and microphone. The speed of sound was found to be proportionate to the slope of the line of best fit on a graph that plotted the number of antinodes for a resonant frequency (measured by the oscilloscope) against the source frequency (from the function generator). Our results showed that the speed of sound is slower in denser gas--gas with greater molecular mass--as well as in gases with more complex molecular structure. This conclusion is in agreement with the theoretical predictions.}
+		
+		
+		%=======  topmiddle  ===================
+		\psection{topright}{Experiment}{
+			\begin{center}
+			\text{Speed of wave is given by:} $v = f\lambda$\\
+			\text{Resonance occurs when:} $L = n\dfrac{\lambda}{2}$\\
+			\end{center}
+			{ (Where $f$ is frequency, $\lambda$ is the wavelength, $L$ is length of the system, and $n$ is \# of half-wave lengths).}\\
+			\vspace{-0.5cm}
+			\begin{align*}
+			\intertext{Combining the above equations..}
+			f = \frac{v}{2L}\times n \implies \bm{ v = \frac{f}{n} \times 2L}
+			\end{align*}
+			$\therefore$ Velocity of sound in gas mediums can be found by measuring the rate of change of resonant frequency with respect to change in number of half wavelengths $\nicefrac{\Delta f}{\Delta n}$ and multiplying it with twice the length of the pathway ($2L$)
+			
+		}
+		
+		
+		%========  topright  =================
+		\psection{bottomleft}{Data}{
+		  \vspace{-0.5cm}
+		  \centering
+			\begin{tikzpicture}
+\begin{axis}[
+	xlabel={\# of Half Wavelengths ($\nicefrac{\lambda}{2}$)},
+	ylabel={Frequency (kHz)},
+	%domain=0:15,
+	width=\sectionHeight+6cm, height=\sectionHeight-6.5cm,
+	%legend pos=north west,
+	legend style={at={(0.03,0.97)},
+         anchor=north west,legend columns=-1,
+         nodes={scale=1.75, transform shape}},
+	%legend style={nodes={scale=1.25, transform shape}},
+	scaled y ticks={real:1000},
+	ytick scale label code/.code={},
+	%legend cell align={left},
+	grid=major
+]
+\addplot[magenta, mark=*, line width=1mm] coordinates {
+	(1,417)    (2, 834)   (3,1251)
+	(4,1668)   (5,2085)   (6,2502)
+	(7,2919)   (8,3336)   (9,3753)
+	(10,4170)  (11,4587)  (12,5004)
+	(13,5421)  (14,5838)  (15,6255)
+};
+
+\addplot[ForestGreen, mark=square, line width=1mm] coordinates{
+	(1,129)    (2, 257)   (3,401)
+	(4,529)    (5,658)    (6,790)
+	(7,926)    (8,1057)   (9,1188)
+	(10,1319)  (11,1450)  (12,1581)
+	(13,1712)  (14,1843)  (15,1972)
+};
+
+\addplot[cyan, mark=triangle, line width=1mm] coordinates{
+	(1,109)    (2, 218)   (3,325)
+	(4,446)    (5,555)    (6,664)
+	(7,780)    (8,891)    (9,1001)
+	(10,1111)  (11,1221)  (12,1332)
+	(13,1442)  (14,1553)  (15,1662)
+};
+
+\addplot[Apricot, mark=diamond, line width=1mm] coordinates{
+	(1,202)    (2, 398)   (3,624)
+	(4,824)    (5,1025)   (6,1228)
+	(7,1431)   (8,1655)   (9,1856)
+	(10,2059)  (11,2262)  (12,2466)
+	(13,2670)  (14,2876)  (15,3076)
+};
+
+
+\legend{He, Ar, $\text{Co}_2$, Air}
+\end{axis}
+\end{tikzpicture}
+			
+			}
+		
+		%========  top middle  =================
+		\psection{topmiddle}{Theory}{
+			Speed of waves is affected by the density and stiffness of the medium.
+			\begin{align*}
+			  %\text{Mechanical Wave} &\longrightarrow v \propto \sqrt{\frac{\text{elasticity factor}}{\text{inertial factor}}}\\
+			  \text{Velocity of Sound Wave} &\longrightarrow v = \sqrt{\frac{\text{bulk modulus} }{\text{density} } } = \sqrt{\frac{k}{\rho}}
+			\end{align*}
+			Sound waves are produced adiabatically and their speed in an ideal gas is given by:
+			\begin{align*}
+			  v_{sound} = \sqrt{\frac{\gamma R T}{M}}
+			\end{align*}
+			{Where $\gamma$ is the ratio of specific heats of gas, $R$ is the molar gas constant, $T$ is temperature in Kelvin, and $M$ is molar mass of gas.}
+			The above equation assumes that the gas involved behaves like an ideal gas and the process is adiabatic. Ideal gas molecules occupy near zero volume and do not interact electrostatically  with each other at low density and 				at high temperatures.
+			}
+		
+		
+		%========  bottommiddle  ===============
+		\psection{bottommiddle}{Final Results}{
+    \centering
+    {Here are the final results showing experimental measurements in agreement with theoretical predictions of how fast sound propogates\\in four different gas mediums during our experiments}\\
+    
+    \vsmall
+        
+    \begin{tabular}{lccc}
+    \toprule
+    % & \multicolumn{1}{c}{\it{Experimental}} & \multicolumn{1}{c}{\it{Theoretical}} &\\
+    {}       & \multicolumn{1}{c}{\ebf{Experimental Velocity} $ \nicefrac{\textup{\bf m}}{\textup{\bf s}}$} & \multicolumn{1}{c}{\ebf{Theoretical Velocity} $\nicefrac{\textup{\bf m}}{\textup{\bf s}}$} & \\
+    \ebf{Gas}    & \multicolumn{1}{c}{$\bm{ v_{ex}\pm \sigma_{ex}}$} & \multicolumn{1}{c}{$\bm{ v_{th}\pm \sigma_{th}}$} & \multicolumn{1}{c}{$\nicefrac{\bm \Delta}{\bm \sigma}$}\\\midrule
+    \rowcolor{magenta!10}
+    Helium & $1013.8 \pm 4.2$ & $1012.75 \pm 0.86$ & $0.245$\\\midrule
+    \rowcolor{Green!10}
+    Argon & $320.0 \pm 1.3$ & $320.66 \pm 0.27$ & $0.497$\\\midrule
+    \rowcolor{cyan!10}
+    Carbon Dioxide & $270.1 \pm 1.1$ & $269.55 \pm 0.23$ & $0.489$\\\midrule
+    \rowcolor{Apricot!10}
+    Air & $346.2 \pm 2.1$ & $346.72 \pm 0.29$ & $0.245$\\\bottomrule
+    \end{tabular}\\
+
+		
+			}
+		
+		%========  bottomright  ================
+		\psection{bottomright}{Conclusion}{
+		\begin{enumerate}
+		  \item {Sound travels slowest in linear triatomic gases in comparison with diatomic or monoatomic gases.}
+		  \begin{center}
+		  \begin{minipage}{0.45\sectionTextWidth}
+		  \begin{itemize}
+        		\item Monoatomic: He, Ar
+        		\item Diatomic: Air \hspace{3cm} \smash{\raisebox{.5\dimexpr\baselineskip+\itemsep+\parskip}{$\left.\rule{0pt}{.5\dimexpr2\baselineskip+3\itemsep+3\parskip}\right\}\text{\textit{Faster}}$}}
+        		\item Linear Triatomic: $\text{Co}_2$ \hspace{0.6cm}{\}} \textit{Slower}
+      	\end{itemize}
+      	\end{minipage}
+      	\end{center}
+      	\vspace{0.7cm}
+      \item {Molecular mass of the gas molecules is inversely related to the speed of sound in the gas.}
+      \begin{center}
+		  \begin{minipage}{0.45\sectionTextWidth}
+		  \begin{itemize}
+        		\item Lighter: He, \phantom{Air} \hspace{2.6cm}{\}} \textit{Faster}
+        		\item Heavier: Air, Ar, $\text{Co}_2$  \hspace{0.8cm}{\}} \textit{Slower}
+      	\end{itemize}
+      	\end{minipage}
+      	\end{center}
+      \end{enumerate}
+			
+			
+		}
+		
+		
+		%========  footer left  =========
+		\pfoot{left}{
+			\wave
+		}
+		
+		%========  footer right  ========
+		% \pfoot{right}{\pcite{[Mag15]}{C. Magyar.  \emph{Title.} Publisher/Publication \textbf{vol\#}, 2015.}}
+	}
+	
+\end{document}
+
+
+
+% \begin{tikzpicture}[fill between/on layer={axis grid}]
+% \begin{axis}[
+% axis line style={draw=none},
+% xlabel={Wavelength of Electromagnetic spectrum},
+% xlabel style = {yshift=-1.5cm,font=\LARGE},
+% xticklabel style = {font=\Large,yshift=-0.5cm},
+% xmin=10^-5,
+% xmax=10^9,
+% x unit=\si{\micro\meter},
+% xmode=log,
+% ymin=0,
+% ymax=1,
+% height=6cm,
+% yticklabels={},
+% ytick=\empty,
+% xtick style={draw=none}
+% % xtick=\empty
+% ]
+% \addplot[draw=none, name path=start, forget plot] coordinates{(10^-5,0)(10^-5,1)};
+% \addplot[draw=none, name path=gamma, forget plot] coordinates{(10^-3,0)(10^-3,1)};
+% \addplot[draw=none, name path=xrays, forget plot] coordinates{(10^-2,0)(10^-2,1)};
+% \addplot[draw=none, name path=uv, forget plot] coordinates{(0.4,0)(0.4,1)};
+% \addplot[draw=none, name path=visible, forget plot] coordinates{(0.7,0)(0.7,1)};
+% \addplot[draw=none, name path=ir, forget plot] coordinates{(10^2.5,0)(10^2.5,1)};
+% \addplot[draw=none, name path=microwave, forget plot] coordinates{(10^5,0)(10^5,1)};
+% \addplot[draw=none, name path=radiowave, forget plot] coordinates{(10^9,0)(10^9,1)};
+% \addplot[violet!20, area legend] fill between[of=start and gamma];
+% % \node[] at (0,0) {$\gamma$-ray};
+% \addplot[violet!60, area legend] fill between[of=gamma and xrays];
+% % \addlegendentry{X-ray}
+% \addplot[violet, area legend] fill between[of=xrays and uv];
+% % \addlegendentry{Ultra violet}
+% \addplot[shading=visiblelight, area legend] fill between[of=uv and visible];
+% % \addlegendentry{Visible light}
+% \addplot[red, area legend] fill between[of=visible and ir];
+% % \addlegendentry{Infrared}
+% \addplot[Bittersweet, area legend] fill between[of=ir and microwave];
+% % \addlegendentry{Micro wave}
+% \addplot[Brown, area legend] fill between[of=microwave and radiowave];
+% % \addlegendentry{Radio wave}
+% \end{axis}
+% \begin{scope}
+%     \node[] at (2.5,2.5) {$\gamma$-ray};
+%     \node[] at (8,2.5) {$X$-ray};
+%     \node[text=white] at (12.5,2.5) {$UV$-ray};
+%     \node[text=white] at (21,2.5) {Infrared};
+%     \node[text=white] at (30,2.5) {Microwave};
+%     \node[text=white] at (43,2.5) {Radiowave};
+% \end{scope}
+% \end{tikzpicture}
